@@ -1,5 +1,8 @@
 # Nobl9 Data Source Migrator v1.0
 
+**Created by:** Jeremy Cooper (Nobl9)  
+**Support:** Community-supported script (not officially supported by Nobl9)
+
 A Python script for managing Service Level Objectives (SLOs) in Nobl9, enabling data source migration and SLO management across your monitoring infrastructure.
 
 ## Features
@@ -10,6 +13,15 @@ A Python script for managing Service Level Objectives (SLOs) in Nobl9, enabling 
 - **Comprehensive Logging**: Detailed audit trail of all migrations and operations
 - **Cross-Platform Support**: Works on Windows, macOS, and Linux systems
 - **Context Management**: Automatically saves and restores your sloctl context
+
+## ⚠️ Important Disclaimer
+
+**This script is NOT officially supported by Nobl9.** It is a community-contributed tool created by Jeremy Cooper, a Nobl9 employee, for internal and community use.
+
+- **Use at your own risk** - This is not production-tested by Nobl9
+- **No official support** - Nobl9 support team cannot help with this script  
+- **Community contribution** - Created for the Nobl9 user community
+- **Internal tool** - Originally developed for internal Nobl9 use cases
 
 ## Prerequisites
 
@@ -140,6 +152,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Support
 
-For Nobl9-specific issues, refer to the [Nobl9 documentation](https://docs.nobl9.com/).
+**For Nobl9-specific issues:** Refer to the [Nobl9 documentation](https://docs.nobl9.com/) or contact Nobl9 support.
 
-For script-specific issues, check the log files and ensure all prerequisites are met. 
+**For script-specific issues:** This is a community tool - check the log files and ensure all prerequisites are met. No official Nobl9 support is available for this script.
+
+**Community Support:** Issues and questions can be discussed in the GitHub repository, but this is not an officially supported Nobl9 tool. 

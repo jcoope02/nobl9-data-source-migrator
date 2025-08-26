@@ -1,9 +1,16 @@
 #!/usr/bin/env python3
 """
-Data Source Selector for Nobl9
+Nobl9 Data Source Migrator v1.0
+
+Created by: Jeremy Cooper (Nobl9)
+Support: Community-supported script (not officially supported by Nobl9)
 
 This script lists existing data sources in Nobl9 and shows how many SLOs each supports.
 Users can then select data sources and view SLOs grouped by project and service.
+
+IMPORTANT: This script is NOT officially supported by Nobl9. It is a community-contributed 
+tool created by Jeremy Cooper, a Nobl9 employee, for internal and community use.
+Use at your own risk - this is not production-tested by Nobl9.
 """
 
 import base64
