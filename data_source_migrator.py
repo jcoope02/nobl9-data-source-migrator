@@ -947,11 +947,27 @@ def save_yaml_content(
         # Save original selected SLOs
         original_file = output_dir / f"{base_filename}_original.yaml"
         with open(original_file, 'w', encoding='utf-8') as f:
+            # Add warning comment at the top
+            f.write("# =============================================================================\n")
+            f.write("# ORIGINAL SLOs - BACKUP FILE - DO NOT APPLY\n")
+            f.write("# =============================================================================\n")
+            f.write("# This file contains the ORIGINAL SLO configurations before migration.\n")
+            f.write("# Keep this file as a backup in case you need to restore the original state.\n")
+            f.write("# =============================================================================\n\n")
             yaml.dump_all(selected_slos, f, default_flow_style=False, allow_unicode=True)
         
         # Save updated SLOs with new data source
         updated_file = output_dir / f"{base_filename}_updated.yaml"
         with open(updated_file, 'w', encoding='utf-8') as f:
+            # Add warning comment at the top
+            f.write("# =============================================================================\n")
+            f.write("# UPDATED SLOs - VALIDATE BEFORE APPLYING\n")
+            f.write("# =============================================================================\n")
+            f.write("# This file contains SLOs with UPDATED data source configurations.\n")
+            f.write("# IMPORTANT: Review and validate these changes before applying!\n")
+            f.write("# Test with: sloctl apply -f <filename> --dry-run\n")
+            f.write("# Apply with: sloctl apply -f <filename>\n")
+            f.write("# =============================================================================\n\n")
             yaml.dump_all(updated_slos, f, default_flow_style=False, allow_unicode=True)
         
         # log_message(log_file, f"Saved full YAML to: {yaml_file}", "INFO")
@@ -960,6 +976,12 @@ def save_yaml_content(
         print(f"{Colors.GREEN}✓ YAML files saved to: {output_dir}{Colors.RESET}")
         print(f"{Colors.CYAN}  - Original: {original_file.name}{Colors.RESET}")
         print(f"{Colors.CYAN}  - Updated: {updated_file.name}{Colors.RESET}")
+        
+        # Add validation reminder
+        print(f"\n{Colors.YELLOW}⚠️  IMPORTANT: Validate the updated YAML files before applying them!{Colors.RESET}")
+        print(f"{Colors.CYAN}   - Review the changes in: {updated_file.name}{Colors.RESET}")
+        print(f"{Colors.CYAN}   - Test with: sloctl apply -f {updated_file.name} --dry-run{Colors.RESET}")
+        print(f"{Colors.CYAN}   - Keep the original file as backup: {original_file.name}{Colors.RESET}")
         
     except Exception as e:
         log_message(log_file, f"Failed to save YAML files: {e}", "ERROR")
