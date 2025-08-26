@@ -1,0 +1,4 @@
+colorama>=0.4.6
+toml>=0.10.2
+requests>=2.28.0
+PyYAML>=6.0 
